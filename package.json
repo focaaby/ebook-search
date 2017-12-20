@@ -13,7 +13,8 @@
     "axios": "^0.17.1",
     "element-ui": "^2.0.7",
     "vue": "^2.5.2",
-    "vue-axios": "^2.0.2"
+    "vue-axios": "^2.0.2",
+    "vue-spinner": "^1.0.3"
   },
   "devDependencies": {
     "autoprefixer": "^7.1.2",

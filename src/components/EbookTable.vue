@@ -1,12 +1,13 @@
 <template>
   <el-main>
-
     <div style="margin-top: 15px;">
       <el-input placeholder="搜尋您想比價的電子書名關鍵字" v-model="input" v-on:keyup.enter="submitSearch" class="input-with-select">
         <el-button v-on:click="submitSearch" slot="append" icon="el-icon-search"></el-button>
       </el-input>
-    </div
-    >
+    </div>
+    <div class="box-wrapper center">
+      <vue-spinner :loading="isLoading" color="#409EFF" size="45px" margin="24px"></vue-spinner>
+    </div>
     <div>
       <div v-for="book in booksCompany" class="box-wrapper books">
 
@@ -158,8 +159,13 @@
 </template>
 
 <script>
+import PacmanLoader from 'vue-spinner/src/PacmanLoader';
+
 export default {
   name: 'ebook-table',
+  components: {
+    'vue-spinner': PacmanLoader,
+  },
   data () {
     return {
       input: '',
@@ -170,20 +176,28 @@ export default {
       bookWalker: [],
       playStore: [],
       pubu: [],
+      isLoading: false,
     }
   },
   methods: {
     submitSearch() {
+      this.isLoading = true;
       this.axios.get('https://ebook.yuer.tw/search', {
         params: {
           q: this.input
         }
       }).then((res) => {
-        for(let index in res.data) {
-          this[index] = res.data[index]
+        if(res.data){
+          for(let index in res.data) {
+            this[index] = res.data[index]
+          }
+          this.isLoading = false;
         }
-      }).catch((error) => {
-        console.log(error);
+      }).catch((err) => {
+        if(err.msg) {
+          console.log(err);
+          this.isLoading = false;
+        }
       });
     }
   }
@@ -223,6 +237,11 @@ p {
     border-bottom: 1px solid #d2d2d2;
   }
 
+  &.center {
+    justify-content: center;
+    margin-top: 42px;
+  }
+
   .box {
     padding: 12px;
     margin: 0 8px;
@@ -239,7 +258,6 @@ p {
 .search-btn {
   margin: 0 12px;
 }
-
 
 .flex-1 {
   flex: 1;
