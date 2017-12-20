@@ -11,12 +11,12 @@
 
         <div class="box flex-2">
           <h4><a :href="book.link">{{ book.title }}</a></h4>
-          <span>博客來</span>
-          <span>{{ book.price }} {{ book.priceCurrency}}</span>
+          <el-tag type="success">博客來</el-tag>
+          <span class="price">{{ book.price }} {{ book.priceCurrency}}</span>
         </div>
 
         <div class="box flex-3">
-          <h4>介紹</h4>
+          <h2>介紹</h2>
           <p>{{ book.about }}</p>
         </div>
 
@@ -32,12 +32,12 @@
 
         <div class="box flex-2">
           <h4><a :href="book.link">{{ book.title }}</a></h4>
-          <span>Readmoo 讀墨</span>
-          <span>{{ book.price }} {{ book.priceCurrency}}</span>
+          <el-tag type="success">Readmoo 讀墨</el-tag>
+          <span class="price">{{ book.price }} {{ book.priceCurrency}}</span>
         </div>
 
         <div class="box flex-3">
-          <h4>介紹</h4>
+          <h2>介紹</h2>
           <p>{{ book.about }}</p>
         </div>
 
@@ -53,12 +53,12 @@
 
         <div class="box flex-2">
           <h4><a :href="book.link">{{ book.title }}</a></h4>
-          <span>Rakuten kobo</span>
-          <span>{{ book.price }} {{ book.priceCurrency}}</span>
+          <el-tag type="success">Rakuten kobo</el-tag>
+          <span class="price">{{ book.price }} {{ book.priceCurrency}}</span>
         </div>
 
         <div class="box flex-3">
-          <h4>介紹</h4>
+          <h2>介紹</h2>
           <p>{{ book.about }}</p>
         </div>
 
@@ -74,12 +74,12 @@
 
         <div class="box flex-2">
           <h4><a :href="book.link">{{ book.title }}</a></h4>
-          <span>冊生活 TAAZE</span>
-          <span>{{ book.price }} {{ book.priceCurrency}}</span>
+          <el-tag type="success">讀冊生活 TAAZE</el-tag>
+          <span class="price">{{ book.price }} {{ book.priceCurrency}}</span>
         </div>
 
         <div class="box flex-3">
-          <h4>介紹</h4>
+          <h2>介紹</h2>
           <p>{{ book.about }}</p>
         </div>
 
@@ -95,12 +95,12 @@
 
         <div class="box flex-2">
           <h4><a :href="book.link">{{ book.title }}</a></h4>
-          <span>BOOKWALKER</span>
-          <span>{{ book.price }} {{ book.priceCurrency}}</span>
+          <el-tag type="success">BOOKWALKER</el-tag>
+          <span class="price">{{ book.price }} {{ book.priceCurrency}}</span>
         </div>
 
         <div class="box flex-3">
-          <h4>介紹</h4>
+          <h2>介紹</h2>
           <p>{{ book.about }}</p>
         </div>
 
@@ -116,12 +116,12 @@
 
         <div class="box flex-2">
           <h4><a :href="book.link">{{ book.title }}</a></h4>
-          <span>Google Play</span>
-          <span>{{ book.price }} {{ book.priceCurrency}}</span>
+          <el-tag type="success">Google Play</el-tag>
+          <span class="price">{{ book.price }} {{ book.priceCurrency}}</span>
         </div>
 
         <div class="box flex-3">
-          <h4>介紹</h4>
+          <h2>介紹</h2>
           <p>{{ book.about }}</p>
         </div>
 
@@ -137,12 +137,12 @@
 
         <div class="box flex-2">
           <h4><a :href="book.link">{{ book.title }}</a></h4>
-          <span>Pubu 電子書城</span>
-          <span>{{ book.price }} {{ book.priceCurrency}}</span>
+          <el-tag type="success">Pubu 電子書城</el-tag>
+          <span class="price">{{ book.price }} {{ book.priceCurrency}}</span>
         </div>
 
         <div class="box flex-3">
-          <h4>介紹</h4>
+          <h2>介紹</h2>
           <p>{{ book.about }}</p>
         </div>
 
@@ -185,22 +185,49 @@ export default {
 }
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
+* body {
+  font-size: 14px;
+}
+
+a {
+  color: #2B81DA;
+  text-decoration: none;
+}
+
+h2 {
+  color: lighten(black, 20%);
+}
+
+p {
+  color: lighten(black, 35%);
+}
+
+.image {
+  width: 100%;
+  display: block;
+  flex: left;
+  border-radius: 5px;
+}
+
 .box-wrapper {
   display: flex;
   padding: 16px;
   border-bottom: 1px solid #d2d2d2;
+
+  .box {
+    padding: 12px;
+    margin: 0 8px;
+
+    .price {
+      font-size: 1.5rem;
+      color: lighten(black, 20%);
+      margin-left: 8px;
+      padding: 0.5rem 1rem;
+    }
+  }
 }
 
-.box {
-  padding: 12px;
-  margin: 0 8px;
-}
-
-.box-title {
-  margin: 8px;
-  padding: 8px;
-}
 
 .flex-1 {
   flex: 1;
@@ -214,11 +241,4 @@ export default {
   flex: 3;
 }
 
-.image {
-  width: 100%;
-  display: block;
-  flex: left;
-  border-radius: 5px;
-  /* padding-right: 8px; */
-}
 </style>
