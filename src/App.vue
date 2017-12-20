@@ -1,16 +1,16 @@
 <template>
   <div id="app">
-    <HelloWorld/>
+    <EbookTable/>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld'
+import EbookTable from './components/EbookTable'
 
 export default {
   name: 'app',
   components: {
-    HelloWorld
+    EbookTable
   }
 }
 </script>
