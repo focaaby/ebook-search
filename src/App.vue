@@ -19,8 +19,7 @@ export default {
 @import url(https://fonts.googleapis.com/earlyaccess/notosanstc.css);
 
 * {
-    font-family: 'Noto Sans TC', "Microsoft JhengHei", -apple-system, BlinkMacSystemFont,
-"Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue";
+  font-family: 'Noto Sans TC', "Microsoft JhengHei", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue";
 }
 
 </style>

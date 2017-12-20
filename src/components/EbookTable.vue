@@ -1,9 +1,14 @@
 <template>
-  <div class="hello">
-    <el-input placeholder="Please input" v-model="input" v-on:keyup.enter="submitSearch"></el-input>
-    <button v-on:click="submitSearch">search</button>
+  <el-main>
+
+    <div style="margin-top: 15px;">
+      <el-input placeholder="搜尋您想比價的電子書名關鍵字" v-model="input" v-on:keyup.enter="submitSearch" class="input-with-select">
+        <el-button v-on:click="submitSearch" slot="append" icon="el-icon-search"></el-button>
+      </el-input>
+    </div
+    >
     <div>
-      <div v-for="book in booksCompany" class="box-wrapper">
+      <div v-for="book in booksCompany" class="box-wrapper books">
 
         <div class="box img flex-1">
           <img :src="book.thumbnail" :alt="book.title" class="image">
@@ -24,7 +29,7 @@
     </div>
 
     <div>
-      <div v-for="book in readmoo" class="box-wrapper">
+      <div v-for="book in readmoo" class="box-wrapper books">
 
         <div class="box img flex-1">
           <img :src="book.thumbnail" :alt="book.title" class="image">
@@ -45,7 +50,7 @@
     </div>
 
     <div>
-      <div v-for="book in kobo" class="box-wrapper">
+      <div v-for="book in kobo" class="box-wrapper books">
 
         <div class="box img flex-1">
           <img :src="book.thumbnail" :alt="book.title" class="image">
@@ -66,7 +71,7 @@
     </div>
 
     <div>
-      <div v-for="book in taaze" class="box-wrapper">
+      <div v-for="book in taaze" class="box-wrapper books">
 
         <div class="box img flex-1">
           <img :src="book.thumbnail" :alt="book.title" class="image">
@@ -87,7 +92,7 @@
     </div>
 
     <div>
-      <div v-for="book in bookWalker" class="box-wrapper">
+      <div v-for="book in bookWalker" class="box-wrapper books">
 
         <div class="box img flex-1">
           <img :src="book.thumbnail" :alt="book.title" class="image">
@@ -108,7 +113,7 @@
     </div>
 
     <div>
-      <div v-for="book in playStore" class="box-wrapper">
+      <div v-for="book in playStore" class="box-wrapper books">
 
         <div class="box img flex-1">
           <img :src="book.thumbnail" :alt="book.title" class="image">
@@ -129,7 +134,7 @@
     </div>
 
     <div>
-      <div v-for="book in pubu" class="box-wrapper">
+      <div v-for="book in pubu" class="box-wrapper books">
 
         <div class="box img flex-1">
           <img :src="book.thumbnail" :alt="book.title" class="image">
@@ -149,7 +154,7 @@
       </div>
     </div>
 
-  </div>
+  </el-main>
 </template>
 
 <script>
@@ -213,7 +218,10 @@ p {
 .box-wrapper {
   display: flex;
   padding: 16px;
-  border-bottom: 1px solid #d2d2d2;
+
+  &.books {
+    border-bottom: 1px solid #d2d2d2;
+  }
 
   .box {
     padding: 12px;
@@ -228,6 +236,10 @@ p {
   }
 }
 
+.search-btn {
+  margin: 0 12px;
+}
+
 
 .flex-1 {
   flex: 1;
@@ -240,5 +252,10 @@ p {
 .flex-3 {
   flex: 3;
 }
+
+.flex-8 {
+  flex: 8;
+}
+
 
 </style>
