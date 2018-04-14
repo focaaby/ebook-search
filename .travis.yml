@@ -7,6 +7,8 @@ install:
   - npm install
   - npm run build
 
+script: echo 'skip test' # Skip `yarn test`
+
 deploy:
   local_dir: ./dist
   provider: pages
