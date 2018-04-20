@@ -1,7 +1,7 @@
 <template>
   <el-main>
     <div style="margin-top: 15px;">
-      <el-input placeholder="搜尋您想比價的電子書名關鍵字" v-model="input" v-on:keyup.enter.native="submitSearch" class="input-with-select">
+      <el-input placeholder="搜尋您想比價的電子書名關鍵字" v-model="input" @keyup.enter.native="submitSearch" class="input-with-select">
         <el-button v-on:click="submitSearch" slot="append" icon="el-icon-search"></el-button>
       </el-input>
     </div>
